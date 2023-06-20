@@ -4,10 +4,14 @@ import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
+import { radioTheme } from "./theme/Radio.js";
 
 const configChakra = {
   useSystemColorMode: true,
   initialColorMode: "dark",
+  components: {
+    Radio: radioTheme,
+  },
 };
 
 const theme = extendTheme(configChakra);

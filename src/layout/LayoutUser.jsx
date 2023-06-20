@@ -1,18 +1,21 @@
 // import React from "react";
 import { Outlet } from "react-router-dom";
-import { Box, Flex, Stack } from "@chakra-ui/react";
+import { Box, Container, Flex, Stack } from "@chakra-ui/react";
 import Header from "../components/Header";
 
 const LayoutUser = () => {
   return (
-    <Flex height="100vh" width="100vw">
-      <Stack>
+    <>
+      <Flex
+        flexDirection={"column"}
+        // height="100vh"
+      >
         <Header />
         <Box>
           <Outlet />
         </Box>
-      </Stack>
-    </Flex>
+      </Flex>
+    </>
     // <div className="min-h-screen grid grid-cols-1 xl:grid-cols-6">
     //   {/* <Sidebar /> */}
     //   <div className="xl:col-span-5">

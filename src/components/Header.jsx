@@ -48,77 +48,36 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <header className="border-b border-secondary-100 p-4 px-8 flex items-center justify-end sm:block">
-      {/* <Stack>
-          <div className="hidden sm:ml-6 sm:block">
-            <div className="flex space-x-4">
-              <a
-                href="#"
-                className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                aria-current="page"
-              >
-                Dashboard
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-              >
-                Team
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-              >
-                Projects
-              </a>
-              <a
-                href="#"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-              >
-                Calendar
-              </a>
-            </div>
-          </div>
-        </Stack> */}
-      <HStack alignItems={"center"} flex={1} justifyContent={"space-between"}>
-        <Flex
-          h={16}
-          alignItems={"center"}
-          justifyContent={"space-between"}
-          direction={"row"}
-          flex={1}
-        >
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
+    <HStack
+      as={"header"}
+      borderBottom={"1px"}
+      borderBottomColor={"gray.200"}
+      px={4}
+      minWidth="max-content"
+      alignItems="center"
+      h={24}
+      justifyContent={"space-around"}
+      // bgColor={"green"}
+    >
+      {/* <HStack alignItems={"center"} flex={1} justifyContent={"space-between"}> */}
+      <Box>
+        <h2>4 Personalities</h2>
+      </Box>
+      <Box flex={1}>
+        <Center>
           <HStack
-            // spacing={8}
-            alignItems={"center"}
-            flex={1}
+            as={"nav"}
+            spacing={24}
+            display={{ base: "none", md: "flex" }} //explain this line : https://chakra-ui.com/docs/features/responsive-styles#using-objects
           >
-            <Box>
-              <h2>4 Personalities</h2>
-            </Box>
-            <Box flex={1}>
-              <Center>
-                <HStack
-                  as={"nav"}
-                  spacing={24}
-                  display={{ base: "none", md: "flex" }} //explain this line : https://chakra-ui.com/docs/features/responsive-styles#using-objects
-                >
-                  {Links.map((link) => (
-                    <NavLink key={link}>{link}</NavLink>
-                  ))}
-                </HStack>
-              </Center>
-            </Box>
+            {Links.map((link) => (
+              <NavLink key={link}>{link}</NavLink>
+            ))}
           </HStack>
-          <Flex alignItems={"center"}>
-            {/* <Menu>
+        </Center>
+      </Box>
+      {/* <Flex alignItems={"center"}>
+          <Menu>
               <MenuButton
                 as={Button}
                 rounded={"full"}
@@ -138,26 +97,25 @@ const Header = () => {
                 <MenuDivider />
                 <MenuItem>Logout</MenuItem>
               </MenuList>
-            </Menu> */}
-          </Flex>
-        </Flex>
-        {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-        <HStack spacing={8}>
-          <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? <RiSunFill /> : <RiMoonFill />}
-          </Button>
-          <Button>Login</Button>
-        </HStack>
+            </Menu>
+        </Flex> */}
+      {isOpen ? (
+        <Box pb={4} display={{ md: "none" }}>
+          <Stack as={"nav"} spacing={4}>
+            {Links.map((link) => (
+              <NavLink key={link}>{link}</NavLink>
+            ))}
+          </Stack>
+        </Box>
+      ) : null}
+      <HStack spacing={8}>
+        <Button onClick={toggleColorMode}>
+          {colorMode === "light" ? <RiSunFill /> : <RiMoonFill />}
+        </Button>
+        <Button>Login</Button>
       </HStack>
-    </header>
+      {/* </HStack> */}
+    </HStack>
   );
 };
 

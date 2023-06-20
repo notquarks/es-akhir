@@ -35,18 +35,20 @@ export default function Home() {
             Only 10 minutes to get a “freakishly accurate” description of who
             you are and why you do things the way you do.
           </Text>
-          <Button
-            mt={6}
-            colorScheme="teal"
-            // size="lg"
-            h={"80px"}
-            w={"264px"}
-            rightIcon={<ArrowForwardIcon />}
-            borderRadius={"full"}
-            fontSize={"2xl"}
-          >
-            <Link to="/quiz">Take the Test</Link>
-          </Button>
+          <Link to="/quiz">
+            <Button
+              mt={6}
+              colorScheme="teal"
+              // size="lg"
+              h={"80px"}
+              w={"264px"}
+              rightIcon={<ArrowForwardIcon />}
+              borderRadius={"full"}
+              fontSize={"2xl"}
+            >
+              Take the Test
+            </Button>
+          </Link>
         </Stack>
       </Box>
     </Flex>
