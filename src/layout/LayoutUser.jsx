@@ -5,17 +5,20 @@ import Header from "../components/Header";
 
 const LayoutUser = () => {
   return (
-    <>
-      <Flex
-        flexDirection={"column"}
-        // height="100vh"
-      >
+    <Flex
+      flexDirection={"column"}
+      // minHeight={"max-content"}
+      minHeight="100vh"
+      // height="100vh"
+    >
+      <Box flex={1}>
         <Header />
-        <Box>
-          <Outlet />
-        </Box>
-      </Flex>
-    </>
+      </Box>
+
+      <Box pt={32} pb={20} flex={1}>
+        <Outlet />
+      </Box>
+    </Flex>
     // <div className="min-h-screen grid grid-cols-1 xl:grid-cols-6">
     //   {/* <Sidebar /> */}
     //   <div className="xl:col-span-5">

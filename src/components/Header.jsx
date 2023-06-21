@@ -26,7 +26,12 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
 
-const Links = ["Tes Kepribadian", "Tipe Kepribadian", "Tentang"];
+const Links = [
+  { name: "Home", url: "/" },
+  { name: "Tes Kepribadian", url: "/quiz" },
+  { name: "Tipe Kepribadian", url: "/type" },
+  { name: "Tentang", url: "/about" },
+];
 
 const NavLink = ({ children }) => (
   <Link
@@ -37,9 +42,10 @@ const NavLink = ({ children }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
+    to={children.url}
     href={"#"}
   >
-    <Text fontSize="xl"> {children}</Text>
+    <Text fontSize="xl"> {children.name}</Text>
   </Link>
 );
 
@@ -48,14 +54,21 @@ const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <HStack
+    <Flex
       as={"header"}
       borderBottom={"1px"}
+      // pos="relative"
+      position="fixed"
       borderBottomColor={"gray.200"}
       px={4}
       minWidth="max-content"
       alignItems="center"
       h={24}
+      w="100%"
+      backgroundColor={"Background"}
+      // backgroundColor="rgba(255,
+      //   255, 255, 0.8)"
+      zIndex={"7"}
       justifyContent={"space-around"}
       // bgColor={"green"}
     >
@@ -115,7 +128,7 @@ const Header = () => {
         <Button>Login</Button>
       </HStack>
       {/* </HStack> */}
-    </HStack>
+    </Flex>
   );
 };
 

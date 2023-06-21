@@ -18,6 +18,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/questions/, ""),
       },
+      "/answer": {
+        target: "http://127.0.0.1:5000/api/answer", // Replace with your Flask API server URL
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/answer/, ""),
+      },
       watch: {
         usePolling: true,
       },
