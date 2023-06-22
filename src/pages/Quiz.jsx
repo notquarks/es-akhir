@@ -51,7 +51,7 @@ const Quiz = () => {
   useEffect(() => {
     const fetchQuestion = () => {
       try {
-        fetch("/questions")
+        fetch("https:/es-flask.onrender.com/api/questions")
           .then((response) => response.json())
           .then((data) => setQuestions(data), setQuestionIndex(0));
         // const jsonData = await response.json();
@@ -70,7 +70,7 @@ const Quiz = () => {
       q_val: answers,
     };
     try {
-      fetch("/answer", {
+      fetch("https:/es-flask.onrender.com/api/answer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
