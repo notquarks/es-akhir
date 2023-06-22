@@ -61,21 +61,22 @@ class ExpertSystem:
             weighted_case_answers = np.multiply(case_answers, weights)
             distance = euclidean(weighted_case_answers, weighted_new_user)
             distances.append((distance, personality_type))
-            distances.sort(key=lambda x: x[0])
-            k = int(np.sqrt(len(case_answers)))
-            k_nearest = distances[:k]
             
-            personality_count = {}
-            for dist, personality_type in k_nearest:
-                if personality_type in personality_count:
-                    personality_count[personality_type] += 1
-                else:
-                    personality_count[personality_type] = 1
+        distances.sort(key=lambda x: x[0])
+        k = int(np.sqrt(len(case_answers)))
+        k_nearest = distances[:k]
             
-            predicted_personality = max(personality_count, key=personality_count.get) if personality_count else None
-            return predicted_personality
-        distances.sort()
-        return distances[0][1] if distances else None
+        personality_count = {}
+        for dist, personality_type in k_nearest:
+          if personality_type in personality_count:
+            personality_count[personality_type] += 1
+          else:
+            personality_count[personality_type] = 1
+            
+        predicted_personality = max(personality_count,key=personality_count.get) if personality_count else None
+        return predicted_personality
+        # distances.sort()
+        # return distances[0][1] if distances else None
 
 expert_system = ExpertSystem()
 
