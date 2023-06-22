@@ -2,45 +2,21 @@ from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 from scipy.spatial.distance import euclidean
 from collections import Counter
-import MySQLdb.cursors
 import pandas as pd
 import json
 import joblib
 import time
-import os
 from flask_mysqldb import MySQL
 from dotenv import load_dotenv
 
-
-load_dotenv()
 app = Flask(__name__)
-
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_USER'] = 'root'
-# app.config['MYSQL_PASSWORD'] = ''
-# app.config['MYSQL_DB'] = 'es_akhir'
-app.config['MYSQL_HOST'] = os.getenv("HOST")
-app.config['MYSQL_USER'] = os.getenv("USERNAME")
-app.config['MYSQL_PASSWORD'] = os.getenv("PASSWORD")
-app.config['MYSQL_DB'] = os.getenv("DATABASE")
-app.config['MYSQL_AUTOCOMMIT'] = True
-app.config["MYSQL_CUSTOM_OPTIONS"] = {"ssl": True}
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'es_akhir'
 
 
-# connection = MySQLdb.connect(
-#   host= os.getenv("HOST"),
-#   user=os.getenv("USERNAME"),
-#   passwd= os.getenv("PASSWORD"),
-#   db= os.getenv("DATABASE"),
-#   autocommit = True,
-#   ssl_mode = "VERIFY_IDENTITY",
-#   ssl      = {
-#     "ca": "/etc/ssl/cert.pem"
-#   }
-# )
-
-
-# load_dotenv('./.flaskenv')
+load_dotenv('./.flaskenv')
 mysql = MySQL(app)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
@@ -53,7 +29,7 @@ def index():
 def get_questions():
   """Gets all the quiz questions."""
   cursor = mysql.connection.cursor()
-  cursor.execute('''SELECT * FROM personalitytraits''')
+  cursor.execute('SELECT * FROM personalitytraits')
   questions = cursor.fetchall()
   
     # Convert the questions to JSON.

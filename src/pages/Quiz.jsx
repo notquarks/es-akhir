@@ -71,6 +71,7 @@ const Quiz = () => {
       q_val: answers,
     };
     try {
+<<<<<<< HEAD
       axios
         .get("https:/es-flask.onrender.com/api/answer", quizData, {
           method: "POST",
@@ -79,6 +80,15 @@ const Quiz = () => {
           },
           // body: JSON.stringify(quizData),
         })
+=======
+      fetch("/answer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(quizData),
+      })
+>>>>>>> parent of 7c8bd00 (Merge pull request #1 from notquarks/deploy)
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
