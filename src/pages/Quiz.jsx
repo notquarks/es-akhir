@@ -30,6 +30,7 @@ import {
   useDisclosure,
   useRadioGroup,
 } from "@chakra-ui/react";
+import axios from "axios";
 // import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -50,7 +51,8 @@ const Quiz = () => {
   useEffect(() => {
     const fetchQuestion = () => {
       try {
-        fetch("https:/es-flask.onrender.com/api/questions")
+        axios
+          .get("https:/es-flask.onrender.com/api/questions")
           .then((response) => response.json())
           .then((data) => setQuestions(data), setQuestionIndex(0));
         // const jsonData = await response.json();
@@ -69,13 +71,14 @@ const Quiz = () => {
       q_val: answers,
     };
     try {
-      fetch("https:/es-flask.onrender.com/api/answer", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(quizData),
-      })
+      axios
+        .get("https:/es-flask.onrender.com/api/answer", quizData, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // body: JSON.stringify(quizData),
+        })
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
