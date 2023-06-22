@@ -20,7 +20,6 @@ export default function Home() {
   return (
     <Flex
       m={"auto"}
-      mt={20}
       flexDir={"column"}
       w="100vw"
       p={8}

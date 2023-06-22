@@ -7,9 +7,24 @@ import LayoutUser from "./layout/LayoutUser";
 import Error404 from "./Error404";
 import { Box } from "@chakra-ui/react";
 import Quiz from "./pages/Quiz";
-import Result from "./pages/Result";
 
 function App() {
+  // const [count, setCount] = useState(0);
+  // const [currentTime, setCurrentTime] = useState(0);
+
+  // useEffect(() => {
+  //   const fetchTime = async () => {
+  //     try {
+  //       const response = await fetch("/time");
+  //       const jsonData = await response.json();
+  //       setCurrentTime(jsonData.time);
+  //     } catch (error) {
+  //       console.error("Error fetching time:", error);
+  //     }
+  //   };
+  //   fetchTime();
+  // }, []);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -19,7 +34,6 @@ function App() {
         <Route path="/" element={<LayoutUser />}>
           <Route index element={<Home />} />
           <Route path="quiz" element={<Quiz />} />
-          <Route path="result" element={<Result />} />
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>

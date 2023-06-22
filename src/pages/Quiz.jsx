@@ -6,47 +6,28 @@ import {
   Container,
   Divider,
   Flex,
-  FormControl,
-  FormLabel,
   Grid,
   GridItem,
   HStack,
   Heading,
-  Input,
   ListItem,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Progress,
   Radio,
   RadioGroup,
   Stack,
   Text,
   UnorderedList,
-  useDisclosure,
   useRadioGroup,
 } from "@chakra-ui/react";
-import { LoremIpsum } from "react-lorem-ipsum";
 // import axios from "axios";
-import { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
   const questionsList = questions.slice(questionIndex, questionIndex + 4);
   // const [answers, setAnswers] = useState([]);
-  const [answers, setAnswers] = useState({});
-  const navigate = useNavigate();
-  const [username, setUsername] = useState("");
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [predictedPersonality, setPredictedPersonality] = useState("");
-  const myRef = useRef(null);
-  const executeScroll = () => myRef.current.scrollIntoView();
+  const [answers, setAnswers] = useState([]);
 
   useEffect(() => {
     const fetchQuestion = () => {
@@ -123,12 +104,7 @@ const Quiz = () => {
             pb={24}
             minWidth={"max-content"}
           >
-            <Grid
-              templateColumns="60px 2fr"
-              alignItems={"center"}
-              ref={myRef}
-              id="progressbar"
-            >
+            <Grid templateColumns="60px 2fr" alignItems={"center"}>
               <GridItem>
                 <Text fontSize={"xl"}>{progress_value}%</Text>
               </GridItem>
@@ -142,102 +118,63 @@ const Quiz = () => {
               </GridItem>
             </Grid>
           </Box>
-          <Flex direction={"column"} align={"center"} mb={48} w={"80vw"}>
+          <Flex direction={"column"} align={"center"}>
             {questionsList.map((question) => (
               <Box key={question.id} alignItems={"center"}>
-                <Heading
-                  as="h3"
-                  size="lg"
-                  py={4}
-                  mb={12}
-                  color={"dimgray"}
-                  textAlign={"center"}
-                >
+                <Heading as="h3" size="lg" py={4} color={"dimgray"}>
                   {question.question}
                 </Heading>
-                <Center mb={12}>
+                <Center>
                   <RadioGroup
                     id={question.id}
                     alignItems={"center"}
                     justifyContent={"space-around"}
                     py={8}
-
                     // onChange={setValue}
                     // value={value}
                   >
-                    <HStack spacing={24}>
-                      <Text fontSize={"20"} fontWeight={"semibold"}>
-                        Tidak Setuju
-                      </Text>
+                    <HStack spacing={12}>
                       <Radio
                         size="xxl"
                         name={"ans" + question.id}
                         value="1"
-                        colorScheme="orange"
                         onChange={(event) => {
-                          setAnswers((prevAnswers) => ({
-                            ...prevAnswers,
-                            [question.id]: event.target.value,
-                          }));
-                          // setAnswers([...answers, event.target.value]);
+                          setAnswers([...answers, event.target.value]);
                         }}
                       ></Radio>
                       <Radio
                         size="xl"
                         name={"ans" + question.id}
                         value="2"
-                        colorScheme="yellow"
                         onChange={(event) => {
-                          setAnswers((prevAnswers) => ({
-                            ...prevAnswers,
-                            [question.id]: event.target.value,
-                          }));
-                          // setAnswers([...answers, event.target.value]);
+                          setAnswers([...answers, event.target.value]);
                         }}
                       ></Radio>
                       <Radio
                         size={"lg"}
                         name={"ans" + question.id}
                         value="3"
-                        colorScheme="gray"
                         onChange={(event) => {
-                          setAnswers((prevAnswers) => ({
-                            ...prevAnswers,
-                            [question.id]: event.target.value,
-                          })); // setAnswers([...answers, event.target.value]);
+                          setAnswers([...answers, event.target.value]);
                         }}
                       ></Radio>
                       <Radio
                         size="xl"
                         name={"ans" + question.id}
                         value="4"
-                        colorScheme="cyan"
                         onChange={(event) => {
-                          setAnswers((prevAnswers) => ({
-                            ...prevAnswers,
-                            [question.id]: event.target.value,
-                          }));
-                          // setAnswers([...answers, event.target.value]);
+                          setAnswers([...answers, event.target.value]);
                         }}
                       ></Radio>
                       <Radio
                         size="xxl"
                         name={"ans" + question.id}
                         value="5"
-                        colorScheme="blue"
                         onChange={(event) => {
-                          setAnswers((prevAnswers) => ({
-                            ...prevAnswers,
-                            [question.id]: event.target.value,
-                          }));
-                          console.log(Object.keys(answers).length);
-                          console.log("questionIndex : " + questionIndex);
-                          // setAnswers([...answers, event.target.value]);
+                          setAnswers([...answers, event.target.value]);
+                          console.log(answers.length);
                         }}
                       ></Radio>
-                      <Text fontSize={"20"} fontWeight={"semibold"}>
-                        Setuju
-                      </Text>
                     </HStack>
                   </RadioGroup>
                 </Center>
@@ -245,9 +182,7 @@ const Quiz = () => {
               </Box>
             ))}
             <Button
-              isDisabled={
-                Object.keys(answers).length != questionIndex + 4 ? true : false
-              }
+              isDisabled={answers.length != questionIndex ? true : false}
               mt={6}
               colorScheme="teal"
               // size="lg"
@@ -257,14 +192,9 @@ const Quiz = () => {
               borderRadius={"full"}
               fontSize={"2xl"}
               onClick={() => {
-                executeScroll();
                 // const answer = questionsList[questionIndex].id;
                 // setAnswers([...answers, answer]);
-                if (questionIndex >= 40) {
-                  onOpen();
-                } else {
-                  setQuestionIndex(questionIndex + 4);
-                }
+                setQuestionIndex(questionIndex + 4);
                 console.log(answers);
               }}
             >
@@ -273,34 +203,6 @@ const Quiz = () => {
           </Flex>
         </Flex>
       </Box>
-      <Modal onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Your Name</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <FormControl>
-              <FormLabel>Name</FormLabel>
-              <Input
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Insert your name"
-              />
-            </FormControl>
-          </ModalBody>
-          <ModalFooter>
-            <Button
-              colorScheme="teal"
-              onClick={() => {
-                handleSubmit();
-                onClose();
-              }}
-            >
-              Submit
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
     </Flex>
   );
 };
