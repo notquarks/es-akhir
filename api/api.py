@@ -25,7 +25,7 @@ app.config['MYSQL_USER'] = os.getenv("USERNAME")
 app.config['MYSQL_PASSWORD'] = os.getenv("PASSWORD")
 app.config['MYSQL_DB'] = os.getenv("DATABASE")
 app.config['MYSQL_AUTOCOMMIT'] = True
-app.config["MYSQL_CUSTOM_OPTIONS"] = {"ssl": {"ca": "/etc/ssl/cert.pem"}}
+app.config["MYSQL_CUSTOM_OPTIONS"] = {"ssl": True}
 
 
 # connection = MySQLdb.connect(
