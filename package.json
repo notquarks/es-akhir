@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=4000 --host",
-    "start-api": "cd api && call venv/Scripts/activate.bat && flask run",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
