@@ -12,6 +12,7 @@ import {
   Container,
   Text,
   HStack,
+  Heading,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
@@ -29,12 +30,17 @@ export default function Home() {
     >
       <Box w={"4xl"}>
         <Stack spacing={18} align={"center"}>
-          <Text fontSize={"6xl"} textAlign={"center"}>
-            “It’s so incredible to finally be understood.”
-          </Text>
-          <Text fontSize={"xl"} textAlign={"center"} w={"60%"}>
-            Only 10 minutes to get a “freakishly accurate” description of who
-            you are and why you do things the way you do.
+          <Heading
+            w={"80%"}
+            fontSize={"6xl"}
+            textAlign={"center"}
+            fontWeight={"semibold"}
+          >
+            “Temukan Kepribadian Aslimu dalam 10 Menit!”
+          </Heading>
+          <Text fontSize={"xl"} textAlign={"center"} w={"70%"}>
+            Hanya dalam waktu 10 menit, kamu akan mendapatkan gambaran
+            kepribadianmu dan alasan di balik segala tindakanmu.
           </Text>
           <Link to="/quiz">
             <Button
@@ -47,7 +53,7 @@ export default function Home() {
               borderRadius={"full"}
               fontSize={"2xl"}
             >
-              Take the Test
+              Mulai Quiz !
             </Button>
           </Link>
         </Stack>

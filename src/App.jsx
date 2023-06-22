@@ -8,6 +8,8 @@ import Error404 from "./Error404";
 import { Box } from "@chakra-ui/react";
 import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
+import Type from "./pages/Type";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="quiz" element={<Quiz />} />
           <Route path="result" element={<Result />} />
+          <Route path="type" element={<Type />} />
+          <Route path="about" element={<About />} />
         </Route>
         <Route path="*" element={<Error404 />} />
       </Routes>
