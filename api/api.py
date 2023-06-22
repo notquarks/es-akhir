@@ -57,8 +57,8 @@ class ExpertSystem:
         distances = []
         for case in self.knowledge_base:
             case_answers, personality_type = case
-            weighted_new_user = np.multiply(new_user_answers, weights)
-            weighted_case_answers = np.multiply(case_answers, weights)
+            weighted_new_user = np.divide(np.multiply(new_user_answers, weights), np.sum(weights))
+            weighted_case_answers = np.divide(np.multiply(case_answers, weights), np.sum(weights))
             distance = euclidean(weighted_case_answers, weighted_new_user)
             distances.append((distance, personality_type))
             
