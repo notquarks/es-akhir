@@ -72,7 +72,7 @@ class ExpertSystem:
             personality_count[personality_type] += 1
           else:
             personality_count[personality_type] = 1
-            
+        print(personality_count)    
         predicted_personality = max(personality_count,key=personality_count.get) if personality_count else None
         return predicted_personality
         # distances.sort()
