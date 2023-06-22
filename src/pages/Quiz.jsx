@@ -44,7 +44,7 @@ const Quiz = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [predictedPersonality, setPredictedPersonality] = useState("");
+  const [predictedPersonality, setPredictedPersonality] = useState({});
   const myRef = useRef(null);
   const executeScroll = () => myRef.current.scrollIntoView();
 
