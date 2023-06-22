@@ -80,7 +80,7 @@ class ExpertSystem:
             if count == max_count:
                 if predicted_personality is None or distances.index((dist, personality_type)) < distances.index((dist, predicted_personality)):
                     predicted_personality = personality_type
-        
+        print(predicted_personality);
         return predicted_personality
         # distances.sort()
         # return distances[0][1] if distances else None
