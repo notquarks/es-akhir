@@ -64,6 +64,9 @@ class ExpertSystem:
             
         distances.sort(key=lambda x: x[0])
         k = int(np.sqrt(len(case_answers)))
+        print('k :',k)
+        k = k + 1 if k % 2 == 0 else k 
+        print('k after:',k)
         k_nearest = distances[:k]
             
         personality_count = {}
