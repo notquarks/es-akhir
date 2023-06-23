@@ -66,7 +66,7 @@ class ExpertSystem:
         distances.sort(key=lambda x: x[0])
         k = int(np.sqrt(len(case_answers)))
         print('k :',k)
-        k = math.ceil(k) if k % 2 == 0 else math.floor(k)
+        k = k - 1 if k % 2 == 0 else k 
         print('k after:',k)
         k_nearest = distances[:k]
             
