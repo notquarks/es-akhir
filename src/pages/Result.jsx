@@ -27,14 +27,14 @@ const Result = () => {
     Sanguinis: {
       name: "Sanguinis",
       description:
-        "Orang-orang dengan tipe kepribadian sanguinis cenderung hidup, optimis, ceria, dan tanpa beban. Mereka suka petualangan dan memiliki toleransi risiko yang tinggi. Orang-orang sanguinis umumnya tidak tahan dengan kebosanan dan akan mencari variasi dan hiburan. Secara alami, sifat ini kadang-kadang dapat berdampak negatif pada hubungan romantis dan hubungan lainnya.",
+        "Tipe kepribadian sanguinis pada siswa memiliki karakteristik yang berhubungan dengan kehidupan yang penuh semangat, optimisme, keceriaan, dan kebebasan. Mereka cenderung menyukai petualangan dan memiliki toleransi risiko yang tinggi. Siswa dengan tipe kepribadian sanguinis umumnya tidak tahan dengan kebosanan dan selalu mencari variasi dan hiburan. Namun, sifat ini kadang-kadang dapat memiliki dampak negatif pada hubungan romantis dan hubungan interpersonal lainnya. Karena cenderung mencari kesenangan, siswa dengan tipe kepribadian sanguinis mungkin menghadapi tantangan terkait kecanduan. Ketidakstabilan emosi mereka juga dapat berkontribusi pada kebiasaan makan berlebihan dan masalah berat badan. Selain itu, siswa dengan tipe kepribadian sanguinis memiliki kreativitas yang tinggi dan potensi untuk menjadi seniman yang luar biasa. Mereka juga memiliki bakat dalam hiburan dan dapat sukses jika memilih karir di industri tersebut.",
       img: "/sanguine.png",
       work: ["Marketing", "Travel", "Model", "Memasak", "Olahraga"],
     },
     Koleris: {
       name: "Koleris",
       description:
-        "Seseorang dengan temperamen koleris murni biasanya adalah orang yang berorientasi pada tujuan. Orang-orang koleris sangat cerdas, analitis, dan logis. Sangat praktis dan lugas, mereka tidak selalu menjadi teman yang baik atau terlalu ramah. Mereka tidak menyukai pembicaraan kecil dan menikmati percakapan yang dalam dan bermakna. Lebih baik mereka sendiri daripada bersama orang-orang dangkal dan permukaan. Secara ideal, mereka ingin menghabiskan waktu dengan orang-orang yang memiliki minat profesional yang serupa.",
+        "Tipe kepribadian koleris pada siswa memiliki ciri-ciri yang berkaitan dengan sikap yang berorientasi pada tujuan, kecerdasan, analisis, dan logika. Siswa dengan tipe kepribadian koleris cenderung menjadi individu yang praktis dan lugas, mungkin kurang cenderung untuk menjalin hubungan sosial yang erat atau terlalu ramah. Mereka tidak begitu tertarik dengan percakapan yang dangkal, melainkan lebih menyukai diskusi yang mendalam dan bermakna. Siswa dengan tipe kepribadian ini cenderung lebih nyaman berada sendiri dibandingkan dengan bergaul dengan orang-orang yang memiliki minat yang dangkal atau sekadar permukaan.",
       img: "/choleric.png",
       work: [
         "Manajemen",
@@ -48,14 +48,14 @@ const Result = () => {
     Melankolis: {
       name: "Melankolis",
       description:
-        "Orang-orang dengan kepribadian melankolis menyukai tradisi.Seperti wanita memasak untuk pria; pria membuka pintu untuk wanita. Mereka mencintai keluarga dan teman-teman mereka dan, berbeda dengan orang-orang sanguinis, mereka tidak mencari hal-hal baru dan petualangan. Bahkan lebih dari itu, mereka menghindarinya sebisa mungkin. Seseorang dengan temperamen melankolis tidak mungkin menikah dengan orang asing atau meninggalkan tanah air mereka untuk negara lain. Orang-orang melankolis sangat sosial dan berusaha untuk berkontribusi pada masyarakat. Karena sangat teliti dan akurat, mereka adalah manajer yang fantastis dengan kepribadian yang baik. Karier yang sempurna untuk tipe kepribadian melankolis harus berada di bidang:",
+        "Tipe kepribadian melankolis pada siswa memiliki karakteristik yang berkaitan dengan kecenderungan terhadap tradisi. Mereka menyukai hal-hal yang berhubungan dengan nilai-nilai tradisional seperti wanita yang memasak untuk pria atau pria yang membuka pintu untuk wanita. Kepribadian melankolis mencintai keluarga dan teman-teman mereka, dan berbeda dengan tipe kepribadian sanguinis, mereka tidak aktif mencari pengalaman baru atau petualangan. Sebaliknya, mereka cenderung menghindarinya sebisa mungkin. Siswa dengan tipe kepribadian melankolis tidak akan dengan mudah menikah dengan orang yang tidak mereka kenal atau meninggalkan tanah air mereka untuk tinggal di negara lain. Orang-orang melankolis juga memiliki sifat sosial yang kuat dan berusaha untuk berkontribusi pada masyarakat. Karena sifat mereka yang cermat dan akurat, mereka sering kali menjadi manajer yang hebat dengan kepribadian yang baik.",
       img: "/melancholic.png",
       work: ["Manajemen", "Akuntansi", "Kerja Sosial", "Administrasi"],
     },
     Plegmatis: {
       name: "Plegmatis",
       description:
-        "Seseorang dengan kepribadian plegmatis biasanya adalah orang yang suka bergaul. Mereka mencari harmoni antar pribadi dan hubungan yang erat, yang membuat orang plegmatis menjadi pasangan yang setia dan orangtua yang penuh kasih. Mereka berusaha mempertahankan hubungan dengan teman lama, anggota keluarga yang jauh, dan tetangga. Orang-orang dengan sifat plegmatis cenderung menghindari konflik dan selalu mencoba menjadi mediator antara orang lain untuk mengembalikan perdamaian dan harmoni.",
+        "Tipe kepribadian plegmatis pada siswa memiliki karakteristik yang berkaitan dengan kecenderungan untuk suka bergaul. Mereka aktif mencari harmoni dalam hubungan antar pribadi dan berusaha membangun hubungan yang erat dengan orang lain. Kepribadian plegmatis membuat siswa menjadi individu yang setia dalam hubungan pasangan dan penuh kasih dalam peran sebagai orangtua. Mereka memiliki upaya yang kuat untuk mempertahankan hubungan baik dengan teman lama, anggota keluarga yang jauh, dan tetangga. Selain itu, orang dengan tipe kepribadian plegmatis cenderung menghindari konflik dan memiliki kemampuan sebagai mediator di antara orang lain untuk mengembalikan perdamaian dan harmoni.",
       img: "/phlegmatic.png",
       work: [
         "Perawatan",
