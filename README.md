@@ -1,7 +1,8 @@
-# Expert System 4 Personality/Temperament Test
+# Expert System 4 Personality/Temperament Test 
 Untuk memenuhi tugas akhir matakuliah sistempakar/expert system
 
 ## How to run it
+## [Web](https://es-akhir.onrender.com/)
 ### React
 1. npm install
 2. npm run dev
